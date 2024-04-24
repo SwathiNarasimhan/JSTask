@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basic calculator task</title>
+        <style>
+            .cal-input ul,.operations ul{
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                gap: 10px;
+                align-items: center;
+            }
+            .operations ul a,.cal-input ul a{
+                border: 1px solid;
+                padding: 10px;
+                cursor: pointer;
+            }
+            .operations ul a:hover{
+                background: #eee;
+            }
+            .container {
+                width: 50%;
+                margin: 50px auto;
+                background: #eee;
+                padding: 30px;
+                height: 100%;
+            }
+            .cal-input ul p {
+                width: 100%;
+                display: inline-flex;
+            }
+            .cal-input ul p span {
+                font-weight: 600;
+                margin-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h3 style="text-align: center;">Basic calculator Task 1</h3>
+            <div class="cal-input">
+                <ul>
+                    1st Number : <input type="text" id="text1" />
+                    2nd Number: <input type="text" id="text2" /><br>
+                    <button class="clear" onClick="clearresult()">Clear</button>
+                    <!-- <input type="button" onClick="add()" Value="add" />
+                    <input type="button" onClick="sub()" Value="sub" />
+                    <input type="button" onClick="mul()" Value="Multiply" />
+                    <input type="button" onClick="div()" Value="Divide" />
+                    <input type="button" onClick="div()" Value="Divide" /> -->
+                    <p>The Result is : <br>
+                        <span id = "result"></span>
+                </ul>
+            </div>
+            <div class="operations">
+                <ul>
+                    <li><button class="add" onClick="add()">ADD(+)</button></li>
+                    <li><button class="sub" onClick="sub()">SUB(-)</button></li>
+                    <li><button class="mul" onClick="mul()">MUL(x)</button></li>
+                    <li><button class="div" onClick="div()">DIV(/)</button></li>
+                </ul>
+            </div>
+            
+        </div>
+        <script type="text/javascript">
+            function clearresult(){
+                document.getElementById('text1').value="";
+                document.getElementById('text2').value="";
+                document.getElementById('result').innerHTML="";
+            }
+            function add(){
+                let val1= parseInt(document.getElementById('text1').value) ;
+                let val2= parseInt(document.getElementById('text2').value);
+                document.getElementById('result').innerHTML= val1 + val2;
+            }
+            function sub(){
+                let val1= parseInt(document.getElementById('text1').value) ;
+                let val2= parseInt(document.getElementById('text2').value);
+                document.getElementById('result').innerHTML= val1 - val2;
+            }
+            function mul(){
+                let val1= parseInt(document.getElementById('text1').value) ;
+                let val2= parseInt(document.getElementById('text2').value);
+                document.getElementById('result').innerHTML= val1 * val2;
+            }
+            function div(){
+                let val1= parseInt(document.getElementById('text1').value) ;
+                let val2= parseInt(document.getElementById('text2').value);
+                document.getElementById('result').innerHTML= val1 / val2;
+            }
+            
+        </script>
+    </body>
+</html>
